@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCIS Event Board</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+    <div id="header-container">
+        <div id="header-left">
+            <h1>CCIS</h1>
+        </div>
+
+        <nav id="header-nav">
+            <a href="https://www.instagram.com/itsjames23_" target="_blank">INSTAGRAM</a>
+            <a href="https://www.facebook.com/CJ Cubon" target="_blank">FACEBOOK</a>
+            <a href="mailto:christiancubon23@gmail.com">EMAIL</a>
+            <a href="about-us.html">ABOUT US</a>
+            <a href="contact-us.html">CONTACT US</a>
+            <a href="#admin-panel">ADMIN ACCESS</a></li>
+        </nav>
+    </div>
+        <div id="header-info">
+			 <h1>CCIS Event Board</h1>
+            <p>A centralized information platform that provides timely updates on CCIS-related events, academic programs, institutional announcements, and student activities, supporting effective communication within the college.</p></nav>
+            </div>
+        <nav id="header-infobutton">
+            <a href="#event-display">GET STARTED</a></li>
+        </nav>
+         <div class="header-glow-line"></div>
+    </div>
+</header>
+
+    <main>
+        
+        <div id="sidebar-admin">
+            <section id="admin-panel">
+                <h2>Admin Access</h2>
+                
+                <div id="admin-login">
+                    <p>Enter Admin Access Code to add/delete events.</p>
+                    <form id="login-form">
+                        <div class="form-group">
+                            <label for="admin-code">Access Code:</label>
+                            <input type="password" id="admin-code" required>
+                        </div>
+                        <button type="submit" id="login-btn">Login</button>
+                        <p id="login-message" style="color: #ff3333; margin-top: 10px;"></p>
+                    </form>
+                </div>
+
+                <div id="event-submission-panel" style="display: none;">
+                    <h3>Add New Event</h3>
+                    <form id="event-form">
+                        <div class="form-group">
+                            <label for="event-title">Event Title:</label>
+                            <input type="text" id="event-title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="event-date">Date & Time:</label>
+                            <input type="datetime-local" id="event-date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="event-location">Location:</label>
+                            <input type="text" id="event-location" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="event-organizer">Organizer:</label>
+                            <input type="text" id="event-organizer" required>
+                        </div>
+                        <button type="submit" id="add-event-btn">Add Event</button>
+                    </form>
+
+                    <h3 style="margin-top: 25px;">Event Management Table</h3>
+                    <div id="admin-event-table-container">
+                        </div>
+                    
+                    <button id="logout-btn" style="width: 100%; margin-top: 15px; background-color: #330066;">Logout</button>
+                </div>
+            </section>
+        </div>
+
+        <div id="student-view-content">
+            <section id="event-display">
+                <h2>Upcoming Campus Events</h2>
+                    <div id="search-container">
+    <input type="text" id="search-input" placeholder="Search events by title, location, or organizer...">
+                    </div>
+                <div id="event-list" class="event-list-container">
+                    <p class="empty-message">No events scheduled. Add one above!</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Campus Event System | Developed with HTML, CSS, & JavaScript</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

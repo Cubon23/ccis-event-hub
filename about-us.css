@@ -1,0 +1,168 @@
+/* ==============================
+   ROOT VARIABLES (THEME)
+================================ */
+:root {
+    --bg-dark: #12121e;
+    --card-dark: #1b1b2f;
+    --neon-green: #00ff99;
+    --neon-yellow: #ffcc00;
+    --accent-purple: #330066;
+    --text-light: #ffffff;
+    --text-medium: #cccccc;
+    --font-ui: 'Space Grotesk', system-ui, sans-serif;
+    --font-mono: 'IBM Plex Mono', Consolas, monospace;
+}
+
+/* ==============================
+   GLOBAL STYLES
+================================ */
+* {
+    box-sizing: border-box; /* PREVENTS TEXT FROM SQUEEZING */
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-ui);
+    color: var(--text-medium);
+    line-height: 1.8;
+    background-color: var(--bg-dark);
+    background-image: url(cubon.jpg); /* Your background */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* ==============================
+   HEADER
+================================ */
+header {
+    background-image: url(image7.jpg);
+    border-bottom: 5px double var(--accent-purple);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.9);
+}
+
+#header-container {
+    max-width: 1400px;
+    margin: auto;
+    padding: 25px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header-left h1 {
+    margin: 0;
+    font-size: 2.8em;
+    letter-spacing: 5px;
+    color: var(--neon-green);
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    text-shadow: 0 0 20px var(--neon-green);
+}
+
+#header-nav {
+    display: flex;
+    gap: 20px;
+    
+}
+
+#header-nav a {
+    color: var(--neon-yellow);
+    text-decoration: none;
+    background-size: cover; 
+    font-family: var(--font-monospace);
+    font-size: 1em;
+    letter-spacing: 1px;
+    padding: 10px 16px;
+    border-radius: 6px;
+    position: relative;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+   
+}
+
+#header-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background-color: var(--neon-green);
+    transition: width 0.3s ease;
+}
+
+#header-nav a:hover {
+    color: var(--neon-green);
+    background-color: rgba(0, 255, 153, 0.15);
+    box-shadow: 0 0 15px rgba(0, 255, 153, 0.6);
+}
+
+#header-nav a:hover::after {
+    width: 100%;
+}
+
+/* ==============================
+   MAIN CONTENT
+================================ */
+main {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+#about-us, #contact-us {
+    padding: 50px;
+    margin-bottom: 40px;
+    background-image: linear-gradient(rgba(15, 20, 40, 0.8), rgba(15, 20, 40, 0.8)), url('image/image2.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    border: 1px solid var(--accent-purple);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+    width: 100%; /* ENSURES IT USES THE FULL MAIN WIDTH */
+}
+
+#about-us h2, #contact-us h2 {
+    color: var(--neon-yellow);
+    font-family: var(--font-mono);
+    font-size: 2.2em;
+    border-bottom: 2px solid var(--neon-yellow);
+    padding-bottom: 10px;
+    display: inline-block; /* Keeps underline tight to text */
+    margin-bottom: 25px;
+}
+
+.text-content p {
+    font-family: var(--font-mono);
+    color: var(--text-medium);
+    font-size: 1.1em;
+    max-width: 900px; /* Keeps text lines from getting too long to read */
+    margin-top: 15px;
+}
+
+/* ==============================
+   FOOTER
+================================ */
+footer {
+    margin-top: 80px;
+    padding: 25px;
+    text-align: center;
+    background-color: #0f0f1a;
+    border-top: 3px solid var(--accent-purple);
+    color: #666;
+    font-family: var(--font-mono);
+}
+
+/* ==============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+    #header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    #about-us {
+        padding: 30px 20px;
+    }
+}
