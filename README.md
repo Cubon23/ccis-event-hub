@@ -1,1 +1,2 @@
 # ccis-event-hub
+CCIS Event Hub is a centralized digital platform designed to simplify and visualize event organization within the College of Computing and Information Sciences (CCIS). It provides a clear, structured view of upcoming, ongoing, and completed events allowing organizers to plan schedules, manage participants, assign tasks, and track progress in one place. Through an intuitive and visual dashboard, the system enhances coordination, reduces manual work, and ensures events are organized efficiently, transparently, and on time.
