@@ -430,52 +430,56 @@ header {
     font-size: 1.05em;
 }
 /* --- BUTTONS ABOUT/CONTACT US --- */
+/* --- Optimized Mobile-First Navigation --- */
 #header-nav {
-    display: flex;             /* Changed from flexbox to flex */
-    justify-content: center;   /* This centers the links horizontally */
-    align-items: center;       /* This centers them vertically */
-    gap: 20px;                 /* Adds consistent spacing between links */
-    
-    position: sticky;          /* Keeps it at the top */
-    top: 0;
-    padding: 15px 60px;
-    z-index: 1000;             /* Increased z-index to stay above content */
-    width: 100%;               /* Added % sign */
+    display: flex;
+    flex-wrap: wrap;           /* Allows links to wrap on small screens */
+    justify-content: center;   /* Centers links horizontally */
+    align-items: center;
+    gap: 12px;                 /* Space between items */
+    padding: 15px 20px;
+    width: 100%;               
+    box-sizing: border-box;
+    position: relative;        /* Changed from sticky for better mobile scrolling */
+    z-index: 1000;
 }
 
 #header-nav a {
     color: var(--neon-yellow);
     text-decoration: none;
     font-family: var(--font-monospace);
-    font-size: 1em;
+    font-size: 0.9rem;         /* Slightly smaller for mobile */
     letter-spacing: 1px;
-    padding: 10px 16px;
+    padding: 10px 14px;
     border-radius: 6px;
-    position: relative;
+    border: 1px solid rgba(0, 255, 153, 0.2); /* Subtle border for tap target visibility */
+    background-color: rgba(18, 18, 30, 0.6);   /* Semi-transparent dark background */
     transition: all 0.3s ease;
+    white-space: nowrap;       /* Prevents text inside a link from breaking */
 }
 
-#header-nav a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    width: 0%;
-    height: 2px;
-    background-color: var(--neon-green);
-    transition: width 0.3s ease;
-}
+/* --- Desktop Refinements --- */
+@media (min-width: 769px) {
+    #header-nav {
+        width: auto;           /* Returns to content-width on desktop */
+        position: sticky;      /* Re-enable sticky for desktop */
+        top: 0;
+        gap: 20px;
+        padding: 15px 60px;
+    }
 
-#header-nav a:hover {
-    color: var(--neon-green);
-    background-color: rgba(0, 255, 153, 0.15);
-    box-shadow: 0 0 15px rgba(0, 255, 153, 0.6);
-}
+    #header-nav a {
+        font-size: 1rem;
+        background-color: transparent;
+        border-color: transparent;
+    }
 
-#header-nav a:hover::after {
-    width: 100%;
+    #header-nav a:hover {
+        color: var(--neon-green);
+        background-color: rgba(0, 255, 153, 0.15);
+        box-shadow: 0 0 15px rgba(0, 255, 153, 0.6);
+    }
 }
-
 #header-infobutton{
     display: contents;
     gap: 30px;
@@ -685,3 +689,4 @@ footer {
     font-family: var(--font-system);
     letter-spacing: 0.5px;
 }
+
